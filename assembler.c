@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 	int labels_count;				/* number of labels stored */
 
 	int num_macros;
-	char (*macro_names)[102];
+	char (*macro_names)[MACRO_NAME_LEN];
 
 	Miss *miss_arr;					/* array for missing labels to resolve in second pass */
 	int miss_count;					/* number of missing labels */
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 		rewind(fp_as);
 
 		while(fscanf(fp_as, "%"STR(MAX_NAME)"s", word) == 1){
-			if(strcmp(word, ".extern") == 0)		/* external label */
+			if(strcmp(word, ".extern") == 0)				/* external label */
 				labels_count++;
 		}
 

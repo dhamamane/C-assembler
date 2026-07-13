@@ -8,6 +8,7 @@
 #define MAX_LINE 100	/* maximun number of lines in input file */
 #define MAX_WORD 256	/* maximum number of lines in output file */
 #define MAX_NAME 30	/* maximun characters in label name */
+#define MACRO_NAME_LEN 102
 
 
 /* macro to convert a macro value into a string */

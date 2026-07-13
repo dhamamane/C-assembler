@@ -127,7 +127,7 @@ int check(FILE *fp, char *instructions[16], char *directives[5], char *registers
 
 
 			/* check label length and characters */
-			if(strlen(token)>30){				
+			if(strlen(token)>MAX_NAME){				
 				printf("error on line %d : label name exceeds %d characters\n", line_num, MAX_NAME);
 				valid = 0;
 				continue;
@@ -390,7 +390,7 @@ int check(FILE *fp, char *instructions[16], char *directives[5], char *registers
 					}
 
 					/* check label length and characters */
-					if(strlen(token)>30){										
+					if(strlen(token)>MAX_NAME){										
 						printf("error on line %d : label name exceeds %d characters\n", line_num, MAX_NAME);
 						valid = 0;
 						continue;
