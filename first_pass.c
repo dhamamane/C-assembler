@@ -63,6 +63,11 @@ int first_pass(FILE *fp, char *instructions[16], char *registers[8], Symbol *sym
 	Miss *temp_arr;
 
 
+	*miss_arr = malloc(10 * sizeof(Miss));					/* create dynamically miss_arr array */
+    if (!*miss_arr) {
+        return 0;
+    }
+
 
 	/* reset counters */
 	*code_count = 0;
@@ -257,7 +262,7 @@ int first_pass(FILE *fp, char *instructions[16], char *registers[8], Symbol *sym
 
 			/* register */
 
-			if(strcmp(token, registers[j]) == 0){
+			if(j<8){
 
 				if(!(p == 2 && param_code == 3))			/* if first param is a register: encode second register in same line in bits 2-5 */
 					l++;

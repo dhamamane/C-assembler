@@ -8,7 +8,7 @@
 #define MAX_LINE 100	/* maximun number of lines in input file */
 #define MAX_WORD 256	/* maximum number of lines in output file */
 #define MAX_NAME 30	/* maximun characters in label name */
-#define MACRO_NAME_LEN 102
+#define MAX_MACRO_LEN 102
 
 
 /* macro to convert a macro value into a string */
@@ -33,8 +33,7 @@ typedef struct{
 }Miss;
 
 
-
-
-
-
-
+/* Help functions */
+FILE *open_file(char *base_name, char *extension, char *mode);
+Symbol *allocate_symbol_table(FILE *fp, int *labels_count_out);
+void *allocate_macro_names(FILE *fp_as, int *num_macros_out);

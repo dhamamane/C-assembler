@@ -59,7 +59,7 @@ Size macro_size(FILE *fp)
  *  - Returns 1 if valid, 0 if any error.
  */
 
-int check_macro(FILE *fp, char *registers[8], char *instructions[16], char *directives[5], char (*macro_names)[102], Symbol *sym_table, int labels_count)
+int check_macro(FILE *fp, char *registers[8], char *instructions[16], char *directives[5], char (*macro_names)[MAX_MACRO_LEN], Symbol *sym_table, int labels_count)
 {
 	char line[102];
 	char first_word[MAX_NAME+1], macro_name[MAX_NAME+1], extra[MAX_NAME+1];
@@ -141,7 +141,7 @@ int check_macro(FILE *fp, char *registers[8], char *instructions[16], char *dire
  *  - 1 if successful, 0 if memory allocation fails.
  */
 
-int expand_macro(FILE *fp_as, FILE *fp_am, int num_macros, char (*macro_names)[102])
+int expand_macro(FILE *fp_as, FILE *fp_am, int num_macros, char (*macro_names)[MAX_MACRO_LEN])
 {
 
 	int i, j, s;
