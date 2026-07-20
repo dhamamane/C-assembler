@@ -264,7 +264,7 @@ int expand_macro(FILE *fp_as, FILE *fp_am, int num_macros, char (*macro_names)[M
  *  - 1 if reserved, 0 otherwise
  */
 
-int reserved_word(char *name, char type[10], int line_num, char *instructions[16], char *directives[5], char *registers[8])
+int reserved_word(char *name, char *type, int line_num, char *instructions[16], char *directives[5], char *registers[8])
 {
 	int i;
 

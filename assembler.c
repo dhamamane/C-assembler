@@ -38,9 +38,6 @@
  *  - 0 always (error messages printed directly if issues occur)
  */
 
- FILE *open_file(char *base_name, char *extension, char *mode);
- Symbol *allocate_symbol_table(FILE *fp, int *labels_count_out);
- void *allocate_macro_names(FILE *fp_as, int *num_macros_out);
 
 
 int main(int argc, char *argv[])
